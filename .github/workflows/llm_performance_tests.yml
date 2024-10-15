@@ -662,9 +662,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\32-32_int4_fp16.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\32-32_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -687,9 +687,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\32-32_int4_fp16_436.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\32-32_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test2
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
           
@@ -714,7 +714,7 @@ jobs:
           python run.py >> %CSV_SAVE_PATH%\32-32_int4_fp16\log\%LOG_FILE% 2>&1
           if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test3
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -740,7 +740,7 @@ jobs:
           python run.py >> %CSV_SAVE_PATH%\32-32_int4_fp16\log\%LOG_FILE% 2>&1
           if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test4
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           call conda deactivate
@@ -768,7 +768,7 @@ jobs:
           python run.py >> %CSV_SAVE_PATH%\32-32_int4_fp16\log\%LOG_FILE% 2>&1
           if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test5
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           pip install accelerate==0.23.0
@@ -781,12 +781,12 @@ jobs:
 
           cd python\llm\dev\benchmark\all-in-one
           python ..\..\..\test\benchmark\concat_csv.py
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           del /q *test*.csv
           move *.csv %CSV_SAVE_PATH%\32-32_int4_fp16\
           cd ..\..\..\test\benchmark
           python csv_to_html.py -f %CSV_SAVE_PATH%\32-32_int4_fp16\
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           move %CSV_SAVE_PATH%\32-32_int4_fp16\*.html %CSV_SAVE_PATH%
 
           call conda deactivate
@@ -815,9 +815,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -840,9 +840,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_436.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test2
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -865,9 +865,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_438.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test3
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -891,9 +891,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_443.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test4
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           call conda deactivate
@@ -919,9 +919,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_445.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test5
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           pip install accelerate==0.23.0
@@ -934,12 +934,12 @@ jobs:
 
           cd python\llm\dev\benchmark\all-in-one
           python ..\..\..\test\benchmark\concat_csv.py
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           del /q *test*.csv
           move *.csv %CSV_SAVE_PATH%\1024-128_int4_fp16\
           cd ..\..\..\test\benchmark
           python csv_to_html.py -f %CSV_SAVE_PATH%\1024-128_int4_fp16\
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           move %CSV_SAVE_PATH%\1024-128_int4_fp16\*.html %CSV_SAVE_PATH%
 
           call conda deactivate
@@ -967,9 +967,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\2048-256_int4_fp16.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\2048-256_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -992,9 +992,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\2048-256_int4_fp16_436.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\2048-256_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test2
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1017,9 +1017,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\2048-256_int4_fp16_438.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\2048-256_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test3
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1043,9 +1043,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\2048-256_int4_fp16_443.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\2048-256_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test4
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           call conda deactivate
@@ -1071,9 +1071,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\2048-256_int4_fp16_445.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\2048-256_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test5
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           pip install accelerate==0.23.0
@@ -1086,12 +1086,12 @@ jobs:
 
           cd python\llm\dev\benchmark\all-in-one
           python ..\..\..\test\benchmark\concat_csv.py
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           del /q *test*.csv
           move *.csv %CSV_SAVE_PATH%\2048-256_int4_fp16\
           cd ..\..\..\test\benchmark
           python csv_to_html.py -f %CSV_SAVE_PATH%\2048-256_int4_fp16\
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           move %CSV_SAVE_PATH%\2048-256_int4_fp16\*.html %CSV_SAVE_PATH%
 
           call conda deactivate
@@ -1119,9 +1119,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\3072-384_int4_fp16.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\3072-384_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1144,9 +1144,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\3072-384_int4_fp16_436.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\3072-384_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test2
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1169,9 +1169,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\3072-384_int4_fp16_438.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\3072-384_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test3
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1195,9 +1195,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\3072-384_int4_fp16_443.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\3072-384_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test4
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           call conda deactivate
@@ -1223,9 +1223,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\3072-384_int4_fp16_445.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\3072-384_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test5
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           pip install accelerate==0.23.0
@@ -1238,12 +1238,12 @@ jobs:
 
           cd python\llm\dev\benchmark\all-in-one
           python ..\..\..\test\benchmark\concat_csv.py
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           del /q *test*.csv
           move *.csv %CSV_SAVE_PATH%\3072-384_int4_fp16\
           cd ..\..\..\test\benchmark
           python csv_to_html.py -f %CSV_SAVE_PATH%\3072-384_int4_fp16\
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           move %CSV_SAVE_PATH%\3072-384_int4_fp16\*.html %CSV_SAVE_PATH%
 
           call conda deactivate
@@ -1271,9 +1271,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\4096-512_int4_fp16.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\4096-512_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1296,9 +1296,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\4096-512_int4_fp16_438.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\4096-512_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test2
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1322,9 +1322,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\4096-512_int4_fp16_443.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\4096-512_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test3
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           call conda deactivate
@@ -1350,9 +1350,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\4096-512_int4_fp16_445.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\4096-512_int4_fp16\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test4
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           pip install accelerate==0.23.0
@@ -1365,12 +1365,12 @@ jobs:
 
           cd python\llm\dev\benchmark\all-in-one
           python ..\..\..\test\benchmark\concat_csv.py
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           del /q *test*.csv
           move *.csv %CSV_SAVE_PATH%\4096-512_int4_fp16\
           cd ..\..\..\test\benchmark
           python csv_to_html.py -f %CSV_SAVE_PATH%\4096-512_int4_fp16\
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           move %CSV_SAVE_PATH%\4096-512_int4_fp16\*.html %CSV_SAVE_PATH%
 
           call conda deactivate
@@ -1398,9 +1398,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_loadlowbit.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16_loadlowbit\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1423,9 +1423,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_loadlowbit_436.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16_loadlowbit\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test2
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1448,9 +1448,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_loadlowbit_438.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16_loadlowbit\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test3
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1474,9 +1474,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_loadlowbit_443.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16_loadlowbit\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test4
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           call conda deactivate
@@ -1502,9 +1502,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_int4_fp16_loadlowbit_445.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128_int4_fp16_loadlowbit\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test5
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           pip install accelerate==0.23.0
@@ -1517,12 +1517,12 @@ jobs:
 
           cd python\llm\dev\benchmark\all-in-one
           python ..\..\..\test\benchmark\concat_csv.py
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           del /q *test*.csv
           move *.csv %CSV_SAVE_PATH%\1024-128_int4_fp16_loadlowbit\
           cd ..\..\..\test\benchmark
           python csv_to_html.py -f %CSV_SAVE_PATH%\1024-128_int4_fp16_loadlowbit\
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           move %CSV_SAVE_PATH%\1024-128_int4_fp16_loadlowbit\*.html %CSV_SAVE_PATH%
 
           call conda deactivate
@@ -1549,9 +1549,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1574,9 +1574,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_436.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test2
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1599,9 +1599,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_438.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test3
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           call conda deactivate
 
@@ -1625,9 +1625,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_443.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test4
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           call conda deactivate
@@ -1653,9 +1653,9 @@ jobs:
           move ..\..\..\test\benchmark\igpu-perf\1024-128_445.yaml config.yaml
           set PYTHONIOENCODING=utf-8
           python run.py >> %CSV_SAVE_PATH%\1024-128\log\%LOG_FILE% 2>&1
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           python ..\..\..\test\benchmark\igpu-perf\check_csv_results.py --yaml-file config.yaml --suffix test5
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
 
           pip uninstall trl -y
           pip install accelerate==0.23.0
@@ -1668,12 +1668,12 @@ jobs:
 
           cd python\llm\dev\benchmark\all-in-one
           python ..\..\..\test\benchmark\concat_csv.py
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           del /q *test*.csv
           move *.csv %CSV_SAVE_PATH%\1024-128\
           cd ..\..\..\test\benchmark
           python csv_to_html.py -f %CSV_SAVE_PATH%\1024-128\
-          if %ERRORLEVEL% neq 0 (exit /b 1)
+          if %ERRORLEVEL% neq 0 if %ERRORLEVEL% neq -1073740791 (exit /b 1)
           move %CSV_SAVE_PATH%\1024-128\*.html %CSV_SAVE_PATH%
 
           call conda deactivate
